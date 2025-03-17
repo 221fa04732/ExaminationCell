@@ -13,9 +13,31 @@ router.put('/theme', async (req, res) => {
     const { userId } = req.user;
     const { theme } = req.body; // "light" or "dark"
 
+
     if (!theme || !["light", "dark"].includes(theme)) {
         return res.status(400).json({ message: "Invalid theme" });
     }
+router.get('/', (req, res)=>{
+    res.json({
+        msg : "hii from setting"
+    })
+})
+router.post("/update", async (req, res) => {
+    const { regNo, password, name } = req.body;
+    try {
+        const updatedUser = await prisma.student.update({
+            where: { regNo },
+            data: { name, password },
+        });
+        res.status(200).json({ message: "User updated successfully" });
+    } catch (error) {
+        console.error("Error updating user:", error);
+        if (error.code === "P2025") {
+            return res.status(404).json({ message: "User not found" });
+        }
+        res.status(500).json({ message: "Internal server error" });
+    }
+});
 
     try {
         await prisma.user.update({

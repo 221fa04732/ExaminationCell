@@ -26,6 +26,9 @@ export default function SignUpPage() {
             navigate('/dashboard')
         }
       setSignloading(false)
+
+        setSignloading(false)
+
     } 
     catch(e){
       console.log("Internal server error");
