@@ -25,7 +25,10 @@ export default function SignUpPage() {
             localStorage.setItem("examinationcellUserRegNo", response.data.userInfo.regNo)
             navigate('/dashboard')
         }
+      setSignloading(false)
+
         setSignloading(false)
+
     } 
     catch(e){
       console.log("Internal server error");
