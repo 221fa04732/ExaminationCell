@@ -34,7 +34,7 @@ export default function SettingsPage() {
         setLoading(true);
 
         try {
-            const response = await axios.post("http://localhost:3000/api/v1/user/update", {
+            const response = await axios.post("https://examinationcell-backend.onrender.com/api/v1/user/update", {
                 regNo: form.regNo,
                 name: form.name,
                 password: form.newPassword,

@@ -12,7 +12,7 @@ const SettingsPage = lazy (()=> import('./pages/Settings'))
 const SignInPage = lazy(()=> import('./pages/SignIn'))
 const SignUpPage = lazy(()=> import('./pages/SignUp'))
 const StudentsPage = lazy(()=> import('./pages/Students'))
-const Supple = lazy(()=> import('./pages/supple'))
+const SupplePage = lazy(()=> import('./pages/Supple'))
 const StudentForm = lazy(() => import('./components/addstudent'));
 
 
@@ -69,7 +69,7 @@ function App() {
 
        <Route path="/supple" element={
           <UnAuthorized>
-            <Supple />
+            <SupplePage />
           </UnAuthorized>
         } />
 
@@ -80,7 +80,7 @@ function App() {
                 <StudentForm />
               </UnAuthorized>
             } />
-
+            
       </Routes>
     </Suspense>
   </div>)

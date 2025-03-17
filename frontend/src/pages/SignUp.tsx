@@ -14,7 +14,7 @@ export default function SignUpPage() {
 
   async function handleSignup() {
     try {
-      const response = await axios.post("http://localhost:3000/api/v1/user/signup", {
+      const response = await axios.post("https://examinationcell-backend.onrender.com/api/v1/user/signup", {
         name: name,
         regNo: regNo,
         password: password,
